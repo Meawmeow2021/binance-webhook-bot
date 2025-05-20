@@ -7,12 +7,8 @@ def webhook():
     data = request.get_json()
     print("✅ ได้รับ Webhook:", data)
 
-    # ตัวอย่าง: ถ้า data['action'] == "buy":
-    if data.get("action") == "buy":
-        # เรียก Binance API ตรงนี้ (สามารถใส่โค้ดได้)
-        print("สั่งซื้อแล้วครับ")
-
-    return jsonify({"status": "received"}), 200
+    # ใส่ logic เพิ่มตรงนี้ เช่น ส่งไป telegram หรือ binance
+    return jsonify({'status': 'ok'}), 200
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=10000)
