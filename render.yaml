@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: tv-webhook-bot
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: "python app.py"
