@@ -1,7 +1,7 @@
 services:
   - type: web
-    name: tv-webhook-bot
+    name: tradingview-webhook
     env: python
-    plan: free
     buildCommand: ""
     startCommand: "python app.py"
+    autoDeploy: true
