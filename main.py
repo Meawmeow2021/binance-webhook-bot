@@ -1,0 +1,14 @@
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route('/webhook', methods=['POST'])
+def webhook():
+    data = request.get_json()
+    print("✅ ได้รับ Webhook:", data)
+
+    # ใส่ logic เพิ่มตรงนี้ เช่น ส่งไป telegram หรือ binance
+    return jsonify({'status': 'ok'}), 200
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=10000)
